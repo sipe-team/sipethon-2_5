@@ -1,0 +1,18 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier", "react", "@emotion", "simple-import-sort"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  "rules": {
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "react/react-in-jsx-scope": "off",
+  },
+}

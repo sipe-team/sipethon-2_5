@@ -1,0 +1,67 @@
+{
+  "name": "untitled",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:css": "stylelint \"**/*.(ts|tsx|css)\"",
+    "prettier": "prettier \"**/*.(ts|tsx|css|md)\" --write",
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@tanstack/react-query": "^5.37.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.4.0",
+    "@emotion/eslint-plugin": "^11.11.0",
+    "@storybook/addon-essentials": "^8.1.1",
+    "@storybook/addon-interactions": "^8.1.1",
+    "@storybook/addon-links": "^8.1.1",
+    "@storybook/addon-onboarding": "^8.1.1",
+    "@storybook/blocks": "^8.1.1",
+    "@storybook/nextjs": "^8.1.1",
+    "@storybook/react": "^8.1.1",
+    "@storybook/test": "^8.1.1",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@tanstack/react-query-devtools": "^5.37.1",
+    "@types/react": "^18.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "next": "^14.2.3",
+    "postcss": "^8.4.29",
+    "postcss-styled-syntax": "^0.6.4",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "2.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^8.1.1",
+    "stylelint": "^16.5.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard": "^36.0.0",
+    "typescript": "5.1.6"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ]
+  }
+}
