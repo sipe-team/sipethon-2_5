@@ -44,5 +44,5 @@ export default RootLayout
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${({ theme }) => theme.color.background};
+  background: ${({ theme }) => theme.color.neutral0};
 `

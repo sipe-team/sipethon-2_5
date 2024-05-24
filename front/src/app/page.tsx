@@ -1,10 +1,11 @@
 'use client'
 
-import { Button, onPopup, Text } from '../components'
-import { useCounter } from '../hooks'
 import { useGetTodoQuery } from '@/queries'
 import { useDarkModeStore } from '@/store'
 import { add } from '@/utils'
+
+import { Button, onPopup, Text } from '../components'
+import { useCounter } from '../hooks'
 
 const Home = () => {
   const { data, isLoading } = useGetTodoQuery()
