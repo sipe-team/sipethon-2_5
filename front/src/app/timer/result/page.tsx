@@ -22,6 +22,11 @@ const TimerResultPage = () => {
   useEffect(() => {
     document.getElementById('header').style.backgroundColor = 'transparent'
     document.getElementById('app').style.backgroundColor = '#1F6A83'
+
+    return () => {
+      document.getElementById('header').style.backgroundColor = 'white'
+      document.getElementById('app').style.backgroundColor = 'white'
+    }
   }, [])
 
   return (
