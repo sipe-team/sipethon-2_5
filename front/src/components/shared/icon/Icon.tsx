@@ -12,12 +12,13 @@ export interface SvgProps {
 export interface IconProps {
   name: IconName
   size?: number
+  onClick?: () => void
   color?: ColorKey
 }
 
-const Icon = ({ name, size = 24, color = 'text_primary' }: IconProps) => {
+const Icon = ({ name, size = 20, color = 'neutral900', onClick }: IconProps) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Svg as={icons[name]} width={size} height={size} color={color} />
     </Container>
   )
@@ -36,5 +37,5 @@ const Svg = styled.svg<{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${({ color = 'text_primary', theme }) => theme.color[color]};
+  color: ${({ color = 'neutral900', theme }) => theme.color[color]};
 `

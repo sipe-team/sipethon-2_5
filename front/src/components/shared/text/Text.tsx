@@ -8,7 +8,7 @@ export interface TextProps {
   color?: ColorKey
 }
 
-const Text = ({ children, name = 'body1', color = 'text_primary' }: TextProps) => {
+const Text = ({ children, name = 'body1', color = 'neutral900' }: TextProps) => {
   return (
     <Container name={name} color={color}>
       {children}
@@ -22,7 +22,7 @@ const Container = styled.p<Omit<TextProps, 'children'>>`
   font-size: ${({ name = 'body1', theme }) => theme.typography[name].fontSize}px;
   font-weight: ${({ name = 'body1', theme }) => theme.typography[name].fontWeight};
   line-height: ${({ name = 'body1', theme }) => theme.typography[name].lineHeight}px;
-  color: ${({ color = 'text_primary', theme }) => theme.color[color]};
+  color: ${({ color = 'neutral900', theme }) => theme.color[color]};
   letter-spacing: -0.6px;
   white-space: pre-wrap;
 `

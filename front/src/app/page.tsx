@@ -1,10 +1,11 @@
 'use client'
 
-import { Button, onPopup, Text } from '../components'
-import { useCounter } from '../hooks'
 import { useGetTodoQuery } from '@/queries'
 import { useDarkModeStore } from '@/store'
 import { add } from '@/utils'
+
+import { Button, onBottomSheet, onPopup, Text } from '../components'
+import { useCounter } from '../hooks'
 
 const Home = () => {
   const { data, isLoading } = useGetTodoQuery()
@@ -20,9 +21,9 @@ const Home = () => {
         <Text>Loading...</Text>
       ) : (
         <>
-          {data.slice(0, 10).map((todo: { id: string; title: string }) => (
+          {/* {data.slice(0, 10).map((todo: { id: string; title: string }) => (
             <Text key={todo.id}>{todo.title}</Text>
-          ))}
+          ))} */}
         </>
       )}
 
@@ -56,6 +57,20 @@ const Home = () => {
         }
       >
         Popup
+      </Button>
+
+      <br />
+      <br />
+
+      <Button
+        onClick={() =>
+          onBottomSheet({
+            title: '타이틀',
+            children: <div>바텀시트</div>,
+          })
+        }
+      >
+        BottomSheet
       </Button>
     </div>
   )
