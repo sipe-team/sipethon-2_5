@@ -27,5 +27,4 @@ export const getHistories = async () => {
 
 export const getHistory = async (id: number) => {
   return await _fetch(`/history/${id}`)
-
 }
