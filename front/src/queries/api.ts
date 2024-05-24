@@ -11,3 +11,10 @@ export const getRoutines = async () => {
 export const getRoutine = async (id: number) => {
   return await _fetch(`/routine/${id}`)
 }
+
+export const postTimerResult = async (data: { routineId: number; seconds: number; score: number }) => {
+  return await _fetch('/routine/history', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  })
+}
