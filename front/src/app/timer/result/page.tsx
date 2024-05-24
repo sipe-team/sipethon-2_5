@@ -58,6 +58,21 @@ const HeaderSection = styled.div`
 
 const VectorSection = styled.div`
   padding-top: 80px;
+  animation: float 0.8s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
 `
 
 const SubHeaderSection = styled.div`
