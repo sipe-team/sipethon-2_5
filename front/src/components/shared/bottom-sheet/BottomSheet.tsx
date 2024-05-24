@@ -16,7 +16,6 @@ const BottomSheet = () => {
           <Text name="headline">{bottomSheet.title}</Text>
         </HeaderSection>
         <ChildrenSection>{bottomSheet.children}</ChildrenSection>
-        hdhd
       </Container>
     </>
   )
