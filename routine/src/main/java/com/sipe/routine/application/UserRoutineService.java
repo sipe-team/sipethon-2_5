@@ -27,6 +27,7 @@ public class UserRoutineService {
 		return userRoutineRepository.findByUserId(user.getId())
 			.stream()
 			.map(routine -> RoutineResponse.builder()
+				.id(routine.getId())
 				.description(routine.getRoutine().getDescription())
 				.name(routine.getRoutine().getName())
 				.recommendedSeconds(routine.getRoutine().getRecommendedSeconds())
