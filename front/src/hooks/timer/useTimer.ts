@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import TimerPloc from '@/hooks/timer/timer.ploc'
 
 const useTimer = (goalTime: number) => {
+  const [time, setTime] = useState<number>(0)
   const [remainingTime, setRemainingTime] = useState<number>(goalTime)
   const [status, setStatus] = useState<'pending' | 'running' | 'finished'>('pending')
   const timerPlocRef = useRef<TimerPloc | null>(null)
@@ -15,6 +16,7 @@ const useTimer = (goalTime: number) => {
     const update = () => {
       setRemainingTime(timerPlocRef.current!.remainingTime)
       setStatus(timerPlocRef.current!.kind)
+      setTime(timerPlocRef.current!.time)
     }
 
     timerPlocRef.current.subscribe(update)
@@ -28,7 +30,7 @@ const useTimer = (goalTime: number) => {
   const finish = () => timerPlocRef.current?.finish()
   const reset = () => timerPlocRef.current?.reset()
 
-  return { remainingTime, status, start, stop, finish, reset }
+  return { remainingTime, time, status, start, stop, finish, reset }
 }
 
 export default useTimer

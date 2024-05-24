@@ -11,6 +11,10 @@ class Timer {
     this._goalTime = goalTime
   }
 
+  get time() {
+    return this._time
+  }
+
   get remainingTime() {
     return this._goalTime - this._time
   }
@@ -92,6 +96,10 @@ class TimerPloc {
   reset() {
     this.timer.reset()
     this.notify()
+  }
+
+  get time() {
+    return this.timer.time
   }
 
   get remainingTime() {
