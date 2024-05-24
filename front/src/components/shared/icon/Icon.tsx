@@ -12,12 +12,13 @@ export interface SvgProps {
 export interface IconProps {
   name: IconName
   size?: number
+  onClick?: () => void
   color?: ColorKey
 }
 
-const Icon = ({ name, size = 20, color = 'neutral1100' }: IconProps) => {
+const Icon = ({ name, size = 20, color = 'neutral1100', onClick }: IconProps) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Svg as={icons[name]} width={size} height={size} color={color} />
     </Container>
   )
