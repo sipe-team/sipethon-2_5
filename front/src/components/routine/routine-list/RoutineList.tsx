@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { Button, RoutineItem, Text } from '@/components'
+import { Button, RoutineItem } from '@/components'
 
 export interface Routine {
   id: number
@@ -31,7 +31,7 @@ const RoutineList = ({ routineList }: Props) => {
           console.log('click')
         }}
       >
-        더미 텍스트
+        나만의 루틴 만들기
       </Button>
     </Container>
   )
