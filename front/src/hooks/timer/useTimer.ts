@@ -11,6 +11,7 @@ const useTimer = (goalTime: number) => {
   useEffect(() => {
     if (!timerPlocRef.current) {
       timerPlocRef.current = new TimerPloc(goalTime)
+      timerPlocRef.current.start()
     }
 
     const update = () => {

@@ -40,12 +40,6 @@ const TimerPage = () => {
   }
 
   useEffect(() => {
-    if (status === 'pending') {
-      start()
-    }
-  }, [])
-
-  useEffect(() => {
     if (status === 'finished') {
       // 알고리즘에 따라 성공/실패 여부 판단
       setResult(calculateScore({ remainingTime, goalTime: GOALTIME }) > 0 ? 'success' : 'fail')
