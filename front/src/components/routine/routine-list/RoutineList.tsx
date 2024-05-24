@@ -1,18 +1,15 @@
 import styled from '@emotion/styled'
 
 import { Button, RoutineItem } from '@/components'
-
-export interface Routine {
-  id: number
-  name: string
-  description: string
-}
+import { Routine } from '@/queries/routine/type'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   routineList: Routine[]
 }
 
 const RoutineList = ({ routineList }: Props) => {
+  const router = useRouter()
   return (
     <Container>
       {routineList.map((routine) => (
@@ -21,6 +18,7 @@ const RoutineList = ({ routineList }: Props) => {
           routineItem={routine}
           onClick={() => {
             console.log('click')
+            router.push(`/routine/${routine.id}`)
           }}
         />
       ))}

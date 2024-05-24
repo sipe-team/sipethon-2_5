@@ -1,3 +1,5 @@
+'use client'
+
 import styled from '@emotion/styled'
 import { useRouter } from 'next/navigation'
 
@@ -40,4 +42,5 @@ const BackButtonSection = styled.div`
   position: absolute;
   left: 0;
   height: 24px;
+  cursor: pointer;
 `

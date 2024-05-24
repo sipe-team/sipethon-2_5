@@ -8,7 +8,7 @@
  *
  */
 
-export interface History {
+export interface HistorySet {
   id: number
   title: string
   count: number

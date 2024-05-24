@@ -1,6 +1,7 @@
 'use client'
 
 import styled from '@emotion/styled'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { Button, Icon, Text } from '@/components'
@@ -12,6 +13,7 @@ const TimerPage = () => {
 
   const GOALTIME = 60 * 20 // 20분
   const { remainingTime, time, status, start, stop, reset, finish } = useTimer(GOALTIME) // 목표 시간 GOALTIME초
+  const router = useRouter()
   const [result, setResult] = useState<'success' | 'fail' | 'pending'>('pending')
 
   const calculateScore = ({ remainingTime, goalTime }: { remainingTime: number; goalTime: number }): number => {
@@ -39,11 +41,18 @@ const TimerPage = () => {
     return `${minutes}:${seconds}`
   }
 
-  useEffect(() => {
-    if (status === 'pending') {
-      start()
+  const onClickFinish = () => {
+    if (status === 'running') {
+      finish()
+      const state = {
+        score: calculateScore({ remainingTime, goalTime: GOALTIME }),
+        time: timeToMinutes(time),
+        state: result,
+        routine,
+      }
+      router.push('/timer/result')
     }
-  }, [])
+  }
 
   useEffect(() => {
     if (status === 'finished') {
@@ -75,10 +84,17 @@ const TimerPage = () => {
         </TimeSection>
       </VectorSection>
       <BottomSection>
-        <Button type="neutral" icon="pause" onClick={stop} disabled={status !== 'running'}>
-          일시정지
-        </Button>
-        <Button type="primary" onClick={finish} disabled={status !== 'running'}>
+        {status === 'pending' && (
+          <Button type="primary" onClick={start}>
+            시작
+          </Button>
+        )}
+        {status === 'running' && (
+          <Button type="neutral" icon="pause" onClick={stop}>
+            일시정지
+          </Button>
+        )}
+        <Button type="primary" onClick={onClickFinish} disabled={status !== 'running'}>
           완료
         </Button>
       </BottomSection>

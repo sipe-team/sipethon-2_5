@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { useEffect } from 'react'
 
 import { HistoryList } from '@/components'
+import { useGetHistoriesQuery } from '@/queries/history'
 import { useHeaderStore } from '@/store'
 
 const HistoryPage = () => {
@@ -31,9 +32,13 @@ const HistoryPage = () => {
     },
   ]
 
+  const { data: histories } = useGetHistoriesQuery()
+
+  if (histories === undefined) return <div>Loading...</div>
+
   return (
     <Container>
-      <HistoryList historyList={historyListDummy} />
+      <HistoryList historyList={histories} />
     </Container>
   )
 }

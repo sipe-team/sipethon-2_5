@@ -1,18 +1,23 @@
+'use client'
+
 import styled from '@emotion/styled'
 
 import { HistoryItem } from '@/components'
+import { HistorySet } from '@/queries/history/type'
+import { useRouter } from 'next/navigation'
 
-export interface History {
-  id: number
-  name: string
-  description: string
-}
+// export interface History {
+//   id: number
+//   name: string
+//   description: string
+// }
 
 interface Props {
-  historyList: History[]
+  historyList: HistorySet[]
 }
 
 const HistoryList = ({ historyList }: Props) => {
+  const router = useRouter()
   return (
     <Container>
       {historyList.map((history) => (
@@ -20,7 +25,7 @@ const HistoryList = ({ historyList }: Props) => {
           key={history.id}
           historyItem={history}
           onClick={() => {
-            console.log('click')
+            router.push(`/history/${history.id}`)
           }}
         />
       ))}
