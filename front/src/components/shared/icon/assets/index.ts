@@ -8,6 +8,7 @@ import home from './home'
 import pause from './pause'
 import plus from './plus'
 import profile from './profile'
+import sample_profile from './sample_profile'
 import silver from './silver'
 
 export const icons = {
@@ -22,6 +23,7 @@ export const icons = {
   pause,
   plus,
   profile,
+  sample_profile,
   silver,
 }
 

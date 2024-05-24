@@ -7,14 +7,11 @@ export interface BottomSheetProps {
 
 interface State {
   bottomSheet: BottomSheetProps | null
-}
-
-interface Action {
   showBottomSheet: (bottomSheet: BottomSheetProps) => void
   closeBottomSheet: () => void
 }
 
-export const useBottomSheetStore = create<State & Action>((set) => ({
+export const useBottomSheetStore = create<State>((set) => ({
   bottomSheet: null,
   showBottomSheet: (bottomSheet) => set({ bottomSheet: bottomSheet }),
   closeBottomSheet: () => set({ bottomSheet: null }),

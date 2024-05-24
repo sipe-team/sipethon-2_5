@@ -3,9 +3,11 @@
 import { Global, ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { useRef } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 
 import { BottomSheet, Footer, Header, Popup } from '@/components'
+import { useDarkModeStore, useHeaderStore } from '@/store'
 import { global, theme } from '@/styles'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -30,8 +32,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
-  // const { isDarkMode } = useDarkModeStore()
-  const isDarkMode = false
+  const { setTitle } = useHeaderStore()
+  const pathName = usePathname()
+
+  useEffect(() => {
+    setTitle('')
+  }, [setTitle, pathName])
+
+  const { isDarkMode } = useDarkModeStore()
 
   return (
     <html lang="ko">
@@ -68,6 +76,6 @@ export default RootLayout
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  padding: 0 20px;
+  padding: 0 20px 76px;
   background: ${({ theme }) => theme.color.neutral0};
 `
