@@ -1,5 +1,5 @@
 // queries/createFetch.ts
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? ''
 
 interface FetchOptions extends RequestInit {
   token?: string
@@ -10,7 +10,7 @@ const defaultHeaders: HeadersInit = {
 }
 
 // 클라이언트에서만 사용되는 함수, 서버사이드에서는 따로 사용,
-const getToken = (): string | null => {
+export const getToken = (): string | null => {
   if (typeof window !== 'undefined') {
     return localStorage.getItem('token')
   }
@@ -18,7 +18,7 @@ const getToken = (): string | null => {
 }
 
 export const _fetch = async <T>(path: string, options: FetchOptions = {}): Promise<T> => {
-  const token = options.token || getToken()
+  const token = options.token || getToken() || process.env.TEST_ACCOUNT_TOKEN
   const headers: Headers = new Headers({
     ...defaultHeaders,
     ...options.headers,

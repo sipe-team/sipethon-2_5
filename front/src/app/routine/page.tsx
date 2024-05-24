@@ -3,26 +3,14 @@
 import styled from '@emotion/styled'
 
 import { RoutineList, Text } from '@/components'
+import { useGetRoutinesQuery } from '@/queries'
 
 const RoutinePage = () => {
-  const routineListDummy = [
-    {
-      id: 1,
-      name: 'Routine1',
-      description: 'Description1',
-    },
-    {
-      id: 2,
-      name: 'Routine2',
-      description: 'Description2',
-    },
-    {
-      id: 3,
-      name: 'Routine3',
-      description: 'Description3',
-    },
-  ]
+  const { data } = useGetRoutinesQuery()
+
   const username = '석진'
+
+  if (data === undefined) return <div>Loading...</div>
 
   return (
     <Container>
@@ -31,8 +19,7 @@ const RoutinePage = () => {
 
         <Text name="body2">원하는 루틴을 선택하고 실제로 걸리는 시간을 측정해 보세요.</Text>
       </HeaderSection>
-
-      <RoutineList routineList={routineListDummy} />
+      <RoutineList routineList={data} />
     </Container>
   )
 }
