@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-import { Popup } from '@/components'
+import { Header, Popup } from '@/components'
 import { useDarkModeStore } from '@/store'
 import { global, theme } from '@/styles'
 
@@ -26,6 +26,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <ThemeProvider theme={theme(isDarkMode ? 'dark' : 'light')}>
             <Container>
               <Global styles={global} />
+              <Header />
               <Popup />
 
               {children}
