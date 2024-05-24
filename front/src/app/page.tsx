@@ -4,7 +4,7 @@ import { useGetTodoQuery } from '@/queries'
 import { useDarkModeStore } from '@/store'
 import { add } from '@/utils'
 
-import { Button, onPopup, RoutineList, Text } from '../components'
+import { Button, onBottomSheet, onPopup, RoutineList, Text } from '../components'
 import { useCounter } from '../hooks'
 
 const Home = () => {
@@ -75,6 +75,20 @@ const Home = () => {
         }
       >
         Popup
+      </Button>
+
+      <br />
+      <br />
+
+      <Button
+        onClick={() =>
+          onBottomSheet({
+            title: '타이틀',
+            children: <div>바텀시트</div>,
+          })
+        }
+      >
+        BottomSheet
       </Button>
 
       <RoutineList routineList={routineListDummy} />

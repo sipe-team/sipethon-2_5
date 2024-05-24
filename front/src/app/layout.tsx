@@ -3,12 +3,10 @@
 import { Global, ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
-import { Footer, Header, Popup } from '@/components'
-import { useDarkModeStore } from '@/store'
-import { global, theme } from '@/styles'
 import { useRef } from 'react'
+
+import { BottomSheet, Footer, Header, Popup } from '@/components'
+import { global, theme } from '@/styles'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const queryClient = useRef<QueryClient>()
@@ -32,7 +30,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     })
   }
 
-  const { isDarkMode } = useDarkModeStore()
+  // const { isDarkMode } = useDarkModeStore()
+  const isDarkMode = false
 
   return (
     <html lang="ko">
@@ -47,7 +46,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             <Container>
               <Global styles={global} />
               <Header />
-              <Popup />
 
               {children}
 
@@ -55,6 +53,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
               <Footer />
             </Container>
+
+            <Popup />
+            <BottomSheet />
           </ThemeProvider>
         </QueryClientProvider>
       </body>
