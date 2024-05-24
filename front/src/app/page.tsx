@@ -1,7 +1,7 @@
 'use client'
 
-import { Button, onPopup, Text } from '@/components'
-import { useCounter } from '@/hooks'
+import { Button, onPopup, Text } from '../components'
+import { useCounter } from '../hooks'
 import { useGetTodoQuery } from '@/queries'
 import { useDarkModeStore } from '@/store'
 import { add } from '@/utils'
