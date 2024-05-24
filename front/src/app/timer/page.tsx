@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import { Button, Icon, Text } from '@/components'
+import { Button, Text } from '@/components'
 import ProgressCircle from '@/components/progress-circle/ProgressCircle'
 import { useTimer } from '@/hooks'
 
@@ -74,7 +74,9 @@ const TimerPage = () => {
       <VectorSection>
         <ProgressCircle value={GOALTIME - remainingTime} goal={GOALTIME} />
         <TimeSection>
-          <Icon name="home" size={20} />
+          <Text name="h2" color="neutral700">
+            🛁
+          </Text>
           <Text name="body2" color="neutral700">
             {timeToMinutes(GOALTIME)}분
           </Text>

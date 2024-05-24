@@ -16,7 +16,7 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ value, goal }) => {
   const strokeWidth = 14
 
   return (
-    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="220" height="220" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="100" cy="100" r={radius} stroke="#F1F2F4" strokeWidth={strokeWidth} fill="transparent" />
       <circle
         cx="100"
