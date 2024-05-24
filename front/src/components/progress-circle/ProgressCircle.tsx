@@ -17,14 +17,14 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ value, goal }) => {
 
   return (
     <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r={radius} stroke="lightgray" strokeWidth={strokeWidth} fill="white" />
+      <circle cx="100" cy="100" r={radius} stroke="lightgray" strokeWidth={strokeWidth} fill="transparent" />
       <circle
         cx="100"
         cy="100"
         r={radius}
         stroke={color}
         strokeWidth={strokeWidth}
-        fill="white"
+        fill="transparent"
         strokeDasharray={circumference}
         strokeDashoffset={offset}
         strokeLinecap="round"
@@ -38,7 +38,7 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ value, goal }) => {
           r={radius}
           stroke="red"
           strokeWidth={strokeWidth}
-          fill="white"
+          fill="transparent"
           strokeDasharray={circumference}
           strokeDashoffset={overOffset}
           strokeLinecap="round"
