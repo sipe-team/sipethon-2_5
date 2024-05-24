@@ -12,12 +12,12 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ value, goal }) => {
   const offset = circumference - progress * circumference
   const overProgress = Math.max((value - goal) / goal, 0) // 목표를 넘은 부분
   const overOffset = circumference - overProgress * circumference
-  const color = value > goal ? 'lightgray' : 'blue'
+  const color = value > goal ? '#F1F2F4' : '#6CC3E0'
   const strokeWidth = 14
 
   return (
     <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r={radius} stroke="lightgray" strokeWidth={strokeWidth} fill="transparent" />
+      <circle cx="100" cy="100" r={radius} stroke="#F1F2F4" strokeWidth={strokeWidth} fill="transparent" />
       <circle
         cx="100"
         cy="100"
@@ -36,7 +36,7 @@ const ProgressCircle: React.FC<ProgressCircleProps> = ({ value, goal }) => {
           cx="100"
           cy="100"
           r={radius}
-          stroke="red"
+          stroke="#FF6A6E"
           strokeWidth={strokeWidth}
           fill="transparent"
           strokeDasharray={circumference}

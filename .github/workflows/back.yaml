@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./routine
 
     steps:
       - name: Checkout code
@@ -41,7 +41,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/spring-boot-app:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/routine:latest
 
   deploy:
     runs-on: ubuntu-latest
