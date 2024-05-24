@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { RoutineItem, Text } from '@/components'
+import { Button, RoutineItem, Text } from '@/components'
 
 export interface Routine {
   id: number
@@ -25,11 +25,14 @@ const RoutineList = ({ routineList }: Props) => {
         />
       ))}
 
-      <AddRoutineButton>
-        <Text name="subhead" color="neutral900">
-          더미 텍스트
-        </Text>
-      </AddRoutineButton>
+      <Button
+        icon="plus"
+        onClick={() => {
+          console.log('click')
+        }}
+      >
+        더미 텍스트
+      </Button>
     </Container>
   )
 }

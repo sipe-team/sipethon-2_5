@@ -15,7 +15,7 @@ export interface IconProps {
   color?: ColorKey
 }
 
-const Icon = ({ name, size = 24, color = 'neutral1100' }: IconProps) => {
+const Icon = ({ name, size = 20, color = 'neutral1100' }: IconProps) => {
   return (
     <Container>
       <Svg as={icons[name]} width={size} height={size} color={color} />
