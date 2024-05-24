@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { RoutineItem } from '@/components'
+import { RoutineItem, Text } from '@/components'
 
 export interface Routine {
   id: number
@@ -24,6 +24,12 @@ const RoutineList = ({ routineList }: Props) => {
           }}
         />
       ))}
+
+      <AddRoutineButton>
+        <Text name="subhead" color="neutral900">
+          더미 텍스트
+        </Text>
+      </AddRoutineButton>
     </Container>
   )
 }
@@ -35,3 +41,4 @@ const Container = styled.div`
   flex-direction: column;
   gap: 8px;
 `
+const AddRoutineButton = styled.button``

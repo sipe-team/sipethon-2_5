@@ -1,6 +1,6 @@
 import { SvgProps } from '../Icon'
 
-const arrow_left = (props: SvgProps) => (
+const chevron_right = (props: SvgProps) => (
   <svg {...props} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M12.444 22.1666L4.66627 14M4.66627 14L12.444 5.83331M4.66627 14L23.3329 14"
@@ -12,4 +12,4 @@ const arrow_left = (props: SvgProps) => (
   </svg>
 )
 
-export default arrow_left
+export default chevron_right
