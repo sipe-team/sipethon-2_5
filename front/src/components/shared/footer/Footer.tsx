@@ -7,7 +7,6 @@ const Footer = () => {
   const router = useRouter()
   const pathName = usePathname()
 
-  console.log('pathName', pathName)
   const isActivePath = (path: string) => path === pathName
 
   return (
