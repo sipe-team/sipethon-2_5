@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
 
 import { BottomSheet, Footer, Header, Popup } from '@/components'
-import { useHeaderStore } from '@/store'
+import { useDarkModeStore, useHeaderStore } from '@/store'
 import { global, theme } from '@/styles'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -39,8 +39,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     setTitle('')
   }, [setTitle, pathName])
 
-  // const { isDarkMode } = useDarkModeStore()
-  const isDarkMode = false
+  const { isDarkMode } = useDarkModeStore()
 
   return (
     <html lang="ko">
