@@ -17,7 +17,7 @@ const lineHeight = {
   600: 38,
   500: 34,
   400: 28,
-  300: 24,
+  300: 22,
   200: 20,
   100: 18,
 }
@@ -55,6 +55,16 @@ const typography = {
     lineHeight: lineHeight[500],
     fontWeight: fontWeight.bold,
   },
+  headline: {
+    fontSize: fontSize[400],
+    lineHeight: lineHeight[400],
+    fontWeight: fontWeight.bold,
+  },
+  subhead: {
+    fontSize: fontSize[300],
+    lineHeight: lineHeight[300],
+    fontWeight: fontWeight.bold,
+  },
   body1: {
     fontSize: fontSize[300],
     lineHeight: lineHeight[300],
@@ -63,6 +73,11 @@ const typography = {
   body2: {
     fontSize: fontSize[200],
     lineHeight: lineHeight[200],
+    fontWeight: fontWeight.regular,
+  },
+  caption: {
+    fontSize: fontSize[100],
+    lineHeight: lineHeight[100],
     fontWeight: fontWeight.regular,
   },
 }
