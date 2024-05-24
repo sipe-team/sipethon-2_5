@@ -4,6 +4,6 @@ import { HistoryDetail } from './type'
 
 export const useGetHistoryQuery = (id: number): UseQueryResult<HistoryDetail> =>
   useQuery({
-    queryKey: ['history'],
+    queryKey: ['history', id],
     queryFn: () => getHistory(id),
   })

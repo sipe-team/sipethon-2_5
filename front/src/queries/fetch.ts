@@ -18,7 +18,7 @@ export const getToken = (): string | null => {
 }
 
 export const _fetch = async <T>(path: string, options: FetchOptions = {}): Promise<T> => {
-  const token = options.token || getToken() || process.env.TEST_ACCOUNT_TOKEN
+  const token = options.token || getToken() || process.env.NEXT_PUBLIC_TEST_ACCOUNT_TOKEN
   const headers: Headers = new Headers({
     ...defaultHeaders,
     ...options.headers,
@@ -27,7 +27,6 @@ export const _fetch = async <T>(path: string, options: FetchOptions = {}): Promi
   if (token) {
     headers.append('Authorization', `Bearer ${token}`)
   }
-
   const response = await fetch(`${API_URL}${path}`, {
     ...options,
     headers,

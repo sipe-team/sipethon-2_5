@@ -4,33 +4,14 @@ import { Global, ThemeProvider } from '@emotion/react'
 import styled from '@emotion/styled'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 import { BottomSheet, Footer, Header, Popup } from '@/components'
 import { useDarkModeStore, useHeaderStore } from '@/store'
 import { global, theme } from '@/styles'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  const queryClient = useRef<QueryClient>()
-  if (!queryClient.current) {
-    queryClient.current = new QueryClient({
-      defaultOptions: {
-        queries: {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          queryFn: async ({ queryKey }: { queryKey: any }) => {
-            const [url] = queryKey
-            const response = await fetch(url, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-              },
-            })
-            return response.json()
-          },
-          retry: 1,
-        },
-      },
-    })
-  }
+  const queryClient = new QueryClient()
 
   const { setTitle } = useHeaderStore()
   const pathName = usePathname()
@@ -49,7 +30,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <meta httpEquiv="Pragma" content="no-cache" />
       </head>
       <body>
-        <QueryClientProvider client={queryClient.current}>
+        <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme(isDarkMode ? 'dark' : 'light')}>
             <Container id="app">
               <Global styles={global} />
