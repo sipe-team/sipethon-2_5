@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   return (
-    <Container>
+    <Container id="header">
       <BackButtonSection onClick={goBack}>
         <Icon name="arrow_left" size={24} />
       </BackButtonSection>
