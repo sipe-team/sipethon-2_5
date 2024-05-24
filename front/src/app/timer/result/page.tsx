@@ -2,10 +2,21 @@
 
 import styled from '@emotion/styled'
 import { useEffect } from 'react'
+import Lottie from 'react-lottie'
 
 import { Button, Icon, Text } from '@/components'
+import animationData from '@/components/shared/icon/assets/Lottie.json'
 
 const TimerResultPage = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
+
   const routine = '출근 준비 시간 줄이기'
 
   useEffect(() => {
@@ -27,6 +38,10 @@ const TimerResultPage = () => {
 
         <Text name="h5">성공!</Text>
       </SubHeaderSection>
+
+      <LottieSection>
+        <Lottie options={defaultOptions} height={350} width={350} />
+      </LottieSection>
 
       <VectorSection>
         <Icon name="score_board" size={350} />
@@ -81,9 +96,14 @@ const SubHeaderSection = styled.div`
   align-items: center;
 `
 
+const LottieSection = styled.div`
+  position: fixed;
+  top: 0;
+`
+
 const ScoreSection = styled.div`
   position: fixed;
-  bottom: 124px;
+  bottom: 136px;
   left: 50%;
   display: flex;
   gap: 4px;
