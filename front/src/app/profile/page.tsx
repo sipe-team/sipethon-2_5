@@ -57,7 +57,7 @@ const InfoSection = styled.div`
 
 const DarkButtonSection = styled.div`
   position: fixed;
-  bottom: 102px;
+  bottom: 80px;
   left: 50%;
   display: flex;
   gap: 12px;

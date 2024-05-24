@@ -51,7 +51,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <QueryClientProvider client={queryClient.current}>
           <ThemeProvider theme={theme(isDarkMode ? 'dark' : 'light')}>
-            <Container>
+            <Container id="app">
               <Global styles={global} />
               <Header />
 

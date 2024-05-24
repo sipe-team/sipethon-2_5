@@ -44,11 +44,12 @@ export default Footer
 const Container = styled.footer`
   position: fixed;
   bottom: 0;
+  left: 0;
   display: flex;
   gap: 16px;
   justify-content: space-between;
-  width: calc(100% - 40px);
-  padding: 16px 8px;
+  width: 100%;
+  padding: 16px 28px;
   background-color: ${({ theme }) => theme.color.neutral0};
   border-top: 1px solid ${({ theme }) => theme.color.neutral200};
 `
