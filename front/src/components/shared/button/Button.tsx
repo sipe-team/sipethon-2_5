@@ -6,7 +6,7 @@ import { ColorKey } from '@/foundations/color/color'
 
 interface ButtonProps {
   type?: 'neutral' | 'primary'
-  icon: IconName
+  icon?: IconName
   size?: 'M' | 'L'
   children: React.ReactNode
   onClick: () => void
