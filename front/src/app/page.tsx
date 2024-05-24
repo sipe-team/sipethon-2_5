@@ -4,13 +4,31 @@ import { useGetTodoQuery } from '@/queries'
 import { useDarkModeStore } from '@/store'
 import { add } from '@/utils'
 
-import { Button, onPopup, Text } from '../components'
+import { Button, onPopup, RoutineList, Text } from '../components'
 import { useCounter } from '../hooks'
 
 const Home = () => {
   const { data, isLoading } = useGetTodoQuery()
   const { count, increment, decrement, reset } = useCounter()
   const { toggleDarkMode } = useDarkModeStore()
+
+  const routineListDummy = [
+    {
+      id: 1,
+      name: 'Routine1',
+      description: 'Description1',
+    },
+    {
+      id: 2,
+      name: 'Routine2',
+      description: 'Description2',
+    },
+    {
+      id: 3,
+      name: 'Routine3',
+      description: 'Description3',
+    },
+  ]
 
   return (
     <div>
@@ -21,9 +39,9 @@ const Home = () => {
         <Text>Loading...</Text>
       ) : (
         <>
-          {data.slice(0, 10).map((todo: { id: string; title: string }) => (
+          {/* {data.slice(0, 10).map((todo: { id: string; title: string }) => (
             <Text key={todo.id}>{todo.title}</Text>
-          ))}
+          ))} */}
         </>
       )}
 
@@ -58,6 +76,8 @@ const Home = () => {
       >
         Popup
       </Button>
+
+      <RoutineList routineList={routineListDummy} />
     </div>
   )
 }
