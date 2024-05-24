@@ -1,4 +1,3 @@
-import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import { Icon, IconName, Text } from '@/components'
@@ -63,8 +62,8 @@ const Container = styled.button<{
   justify-content: center;
   width: 100%;
   height: ${({ size }) => (size === 'M' ? 54 : 62)}px;
-  background: ${({ type, disabled }) =>
-    disabled ? buttonColor[type].disabledBackground : buttonColor[type].background};
+  background: ${({ type, disabled, theme }) =>
+    disabled ? theme.color[buttonColor[type].disabledBackground] : theme.color[buttonColor[type].background]};
   border: none;
   border-radius: 8px;
 `
