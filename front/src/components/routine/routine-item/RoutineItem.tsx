@@ -1,8 +1,7 @@
 import styled from '@emotion/styled'
 
 import { Text } from '@/components'
-
-import type { Routine } from '../routine-list/RoutineList'
+import { Routine } from '@/queries/routine/type'
 
 interface Props {
   routineItem: Routine

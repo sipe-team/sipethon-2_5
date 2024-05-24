@@ -26,7 +26,13 @@ const ProfilePage = () => {
         <Text>kimgod@email.com</Text>
       </InfoSection>
 
-      <Button>로그아웃</Button>
+      <Button
+        onClick={() => {
+          console.log('asdf')
+        }}
+      >
+        로그아웃
+      </Button>
 
       <DarkButtonSection>
         <Text name="subhead">다크 모드</Text>
