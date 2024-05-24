@@ -1,5 +1,7 @@
 package com.sipe.routine.web.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,4 +18,5 @@ public class RoutineHistoryResponse {
 	private Long score;
 	private Long measuredSeconds;
 	private Long targetSeconds;
+	private LocalDateTime createdAt;
 }
